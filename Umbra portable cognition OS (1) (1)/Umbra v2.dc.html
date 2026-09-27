@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E3DACA;font-family:'Public Sans',system-ui,sans-serif;color:#2B2620;-webkit-font-smoothing:antialiased}
+a{color:#33486A}a:hover{color:#2B2620}
+input,textarea,button{font-family:inherit}
+*{box-sizing:border-box}
+::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 16px;">
+<div style="background:#1E1B17;padding:11px;border-radius:62px;box-shadow:0 40px 80px -30px rgba(43,38,32,.45);">
+<div style="position:relative;width:390px;height:844px;border-radius:51px;overflow:hidden;background:#F6F1E7;">
+
+  <div style="position:absolute;top:0;left:0;right:0;height:50px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 34px;z-index:5;font-size:15px;font-weight:600;background:#F6F1E7;">
+    <div>9:41</div>
+    <div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:120px;height:34px;border-radius:20px;background:#1E1B17;"></div>
+    <div style="display:flex;gap:6px;align-items:center;">
+      <div style="display:flex;gap:2px;align-items:flex-end;"><div style="width:3px;height:5px;background:#2B2620;border-radius:1px;"></div><div style="width:3px;height:7px;background:#2B2620;border-radius:1px;"></div><div style="width:3px;height:9px;background:#2B2620;border-radius:1px;"></div><div style="width:3px;height:11px;background:#2B2620;border-radius:1px;"></div></div>
+      <div style="width:24px;height:12px;border:1.5px solid #2B2620;border-radius:4px;padding:1.5px;"><div style="width:70%;height:100%;background:#2B2620;border-radius:1.5px;"></div></div>
+    </div>
+  </div>
+
+  <sc-if value="{{ isOnboarding }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;top:50px;left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:12px 24px 34px;">
+      <div style="display:flex;align-items:center;gap:14px;height:44px;">
+        <sc-if value="{{ obCanBack }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ obBack }}" aria-label="Back" style="width:36px;height:36px;border-radius:18px;border:1px solid #E4DBCB;background:#FFFDF8;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#2B2620;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg></button>
+        </sc-if>
+        <div style="flex:1;display:flex;gap:5px;">
+          <sc-for list="{{ obBars }}" as="b" hint-placeholder-count="5">
+            <div style="flex:1;height:3px;border-radius:2px;background:{{ b.bg }};transition:background .3s;"></div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding-top:24px;">
+
+        <sc-if value="{{ ob0 }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:36px;padding-top:36px;">
+            <div style="position:relative;width:132px;height:132px;">
+              <div style="position:absolute;inset:0;border-radius:50%;background:#2B2620;"></div>
+              <div style="position:absolute;left:30px;top:-12px;width:132px;height:132px;border-radius:50%;background:#F6F1E7;"></div>
+              <div style="position:absolute;left:30px;top:-12px;width:132px;height:132px;border-radius:50%;border:1px solid #E4DBCB;"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <div style="font-family:'Newsreader',serif;font-size:44px;line-height:1;letter-spacing:-.01em;">Umbra</div>
+              <div style="font-family:'Newsreader',serif;font-style:italic;font-size:22px;line-height:1.3;color:#5E564B;text-wrap:pretty;">Your reading companion, with a memory you can see.</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;">
+              <div style="background:#FFFDF8;border-radius:18px;padding:14px 12px;display:flex;flex-direction:column;gap:18px;min-height:112px;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B2620" stroke-width="1.6"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <div style="font-size:13px;line-height:1.3;">See all of it</div>
+              </div>
+              <div style="background:#FFFDF8;border-radius:18px;padding:14px 12px;display:flex;flex-direction:column;gap:18px;min-height:112px;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B2620" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12l3 3 5-6"></path></svg>
+                <div style="font-size:13px;line-height:1.3;">Approve what I infer</div>
+              </div>
+              <div style="background:#FFFDF8;border-radius:18px;padding:14px 12px;display:flex;flex-direction:column;gap:18px;min-height:112px;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B2620" stroke-width="1.6" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+                <div style="font-size:13px;line-height:1.3;">Export or delete anytime</div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ ob1 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:28px;">
+            <div style="font-family:'Newsreader',serif;font-size:34px;line-height:1.1;">First, who are you?</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <input value="{{ name }}" onChange="{{ onName }}" placeholder="Name" style="height:60px;border:none;background:#FFFDF8;border-radius:18px;padding:0 20px;font-size:18px;color:#2B2620;outline:none;">
+              <input value="{{ role }}" onChange="{{ onRole }}" placeholder="What you do" style="height:60px;border:none;background:#FFFDF8;border-radius:18px;padding:0 20px;font-size:18px;color:#2B2620;outline:none;">
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#5E564B;">
+              <div style="width:10px;height:10px;border-radius:3px;background:#2B2620;"></div>Saved to Identity
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ ob2 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:26px;">
+            <div style="font-family:'Newsreader',serif;font-size:34px;line-height:1.1;">What pulls you in?</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <sc-for list="{{ topicTiles }}" as="c" hint-placeholder-count="6">
+                <button onClick="{{ c.onClick }}" style="position:relative;height:92px;border-radius:18px;border:none;background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;text-align:left;padding:14px;display:flex;align-items:flex-end;font-family:'Newsreader',serif;font-size:19px;line-height:1.1;opacity:{{ c.opacity }};transition:opacity .2s;">
+                  {{ c.label }}
+                  <sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:11px;background:#FFFDF8;display:flex;align-items:center;justify-content:center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2B2620" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5 9-10"></path></svg></div>
+                  </sc-if>
+                </button>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="font-size:13px;color:#8A8174;">Goals</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <sc-for list="{{ goalChips }}" as="c" hint-placeholder-count="4">
+                  <button onClick="{{ c.onClick }}" style="min-height:40px;padding:0 16px;border-radius:20px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }};font-size:14px;cursor:pointer;">{{ c.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ ob3 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:30px;">
+            <div style="font-family:'Newsreader',serif;font-size:34px;line-height:1.1;">When do you read?</div>
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;">
+              <sc-for list="{{ timeTiles }}" as="c" hint-placeholder-count="5">
+                <button onClick="{{ c.onClick }}" style="height:96px;border-radius:16px;border:none;background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:10px;padding:10px 2px;font-size:11px;">
+                  <div style="width:22px;height:22px;border-radius:11px;background:{{ c.sun }};"></div>
+                  {{ c.label }}
+                </button>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="font-size:13px;color:#8A8174;">A good session</div>
+              <div style="display:flex;gap:4px;background:#EEE7D9;padding:4px;border-radius:16px;">
+                <sc-for list="{{ lenOpts }}" as="c" hint-placeholder-count="3">
+                  <button onClick="{{ c.onClick }}" style="flex:1;height:52px;border:none;border-radius:12px;background:{{ c.bg }};color:#2B2620;cursor:pointer;box-shadow:{{ c.sh }};display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:baseline;gap:3px;"><span style="font-family:'Newsreader',serif;font-size:22px;">{{ c.label }}</span><span style="font-size:12px;color:#8A8174;">min</span></span></button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="font-size:13px;color:#8A8174;">Formats</div>
+              <div style="display:flex;gap:8px;">
+                <sc-for list="{{ formatChips }}" as="c" hint-placeholder-count="3">
+                  <button onClick="{{ c.onClick }}" style="flex:1;min-height:44px;border-radius:22px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }};font-size:14px;cursor:pointer;">{{ c.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ ob4 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:22px;">
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="font-family:'Newsreader',serif;font-size:34px;line-height:1.1;">How may I learn?</div>
+              <div style="font-size:15px;line-height:1.45;color:#5E564B;">Anything I notice waits for your OK.</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <sc-for list="{{ mechRows }}" as="r" hint-placeholder-count="5">
+                <div style="display:flex;gap:14px;align-items:center;padding:12px 14px;background:#FFFDF8;border-radius:18px;">
+                  <div style="width:38px;height:38px;flex:none;border-radius:12px;background:{{ r.bg }};color:#FFFDF8;display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:18px;">{{ r.code }}</div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+                    <div style="font-size:15px;font-weight:500;">{{ r.name }}</div>
+                    <div style="font-size:12px;color:#8A8174;">{{ r.short }}</div>
+                  </div>
+                  <sc-if value="{{ r.locked }}" hint-placeholder-val="{{ false }}"><div style="font-size:12px;color:#8A8174;">Always on</div></sc-if>
+                  <sc-if value="{{ r.toggleable }}" hint-placeholder-val="{{ true }}">
+                    <button onClick="{{ r.onToggle }}" aria-label="Toggle" style="width:50px;height:44px;border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;">
+                      <div style="width:48px;height:30px;border-radius:15px;background:{{ r.tgBg }};padding:3px;transition:background .2s;"><div style="width:24px;height:24px;border-radius:12px;background:#FFFDF8;transform:translateX({{ r.tgX }}px);transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2);"></div></div>
+                    </button>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      <button onClick="{{ obNext }}" style="height:58px;border:none;border-radius:29px;background:#2B2620;color:#F6F1E7;font-size:16px;font-weight:500;cursor:pointer;margin-top:16px;">{{ obNextLabel }}</button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
+    <div ref="{{ scrollRef }}" style="position:absolute;top:50px;left:0;right:0;bottom:0;overflow-y:auto;padding-bottom:110px;">
+
+      <sc-if value="{{ tabToday }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:30px;padding:14px 0 20px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:0 22px;">
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;">
+              <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8A8174;">Thursday 24</div>
+              <div style="font-family:'Newsreader',serif;font-size:32px;line-height:1.05;">Hello, {{ firstName }}</div>
+            </div>
+            <button onClick="{{ goMemory }}" aria-label="Your memory" style="width:44px;height:44px;border-radius:22px;border:none;background:#2B2620;color:#F6F1E7;font-family:'Newsreader',serif;font-size:19px;cursor:pointer;">{{ initial }}</button>
+          </div>
+
+          <sc-if value="{{ hasHero }}" hint-placeholder-val="{{ true }}">
+            <div style="margin:0 16px;background:#FFFDF8;border-radius:28px;padding:18px;display:flex;flex-direction:column;gap:18px;box-shadow:0 12px 30px -18px rgba(43,38,32,.3);">
+              <div style="display:flex;gap:18px;">
+                <div style="width:104px;height:150px;flex:none;border-radius:6px 12px 12px 6px;background:{{ hero.cbg }};color:{{ hero.cfg }};padding:12px 10px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 20px -10px rgba(43,38,32,.5), inset 3px 0 0 rgba(0,0,0,.12);">
+                  <div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.8;">{{ hero.kind }}</div>
+                  <div style="font-family:'Newsreader',serif;font-size:17px;line-height:1.05;">{{ hero.title }}</div>
+                  <div style="font-size:9px;opacity:.8;">{{ hero.author }}</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding-top:4px;">
+                  <div style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8A8174;">{{ hero.when }}</div>
+                  <div style="font-family:'Newsreader',serif;font-size:22px;line-height:1.15;">{{ hero.title }}</div>
+                  <div style="font-size:13px;color:#5E564B;">{{ hero.sub }}</div>
+                  <sc-if value="{{ hero.hasProg }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div style="flex:1;height:4px;border-radius:2px;background:#EEE7D9;"><div style="height:4px;border-radius:2px;background:#2B2620;width:{{ hero.prog }};"></div></div>
+                      <div style="font-size:11px;color:#8A8174;">{{ hero.prog }}</div>
+                    </div>
+                  </sc-if>
+                  <div style="margin-top:auto;align-self:flex-start;display:flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:13px;font-size:12px;background:{{ hero.pillBg }};color:{{ hero.pillFg }};border:{{ hero.pillBd }};">{{ hero.pill }}</div>
+                </div>
+              </div>
+              <sc-if value="{{ hero.done }}" hint-placeholder-val="{{ false }}">
+                <div style="height:52px;border-radius:26px;background:#EAF0E3;color:#4B6A42;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5 9-10"></path></svg>Reading</div>
+              </sc-if>
+              <sc-if value="{{ hero.active }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;gap:8px;">
+                  <button onClick="{{ hero.onStart }}" style="flex:1;height:52px;border:none;border-radius:26px;background:#2B2620;color:#F6F1E7;font-size:15px;font-weight:500;cursor:pointer;">Start reading</button>
+                  <button onClick="{{ hero.onSkip }}" aria-label="Not now" style="width:52px;height:52px;border:1px solid #E4DBCB;border-radius:26px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#5E564B;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+                  <button onClick="{{ hero.onWhy }}" aria-label="Why this" style="width:52px;height:52px;border:1px solid {{ hero.whyBd }};border-radius:26px;background:{{ hero.whyBg }};cursor:pointer;font-family:'Newsreader',serif;font-size:20px;color:{{ hero.whyFg }};">?</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{ hero.open }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                  <div style="font-size:13px;color:#5E564B;">{{ hero.basisText }}</div>
+                  <sc-for list="{{ hero.basis }}" as="b" hint-placeholder-count="2">
+                    <div style="display:flex;align-items:center;gap:10px;background:{{ b.bg }};border-radius:14px;padding:4px 4px 4px 12px;">
+                      <div style="width:8px;height:8px;border-radius:4px;background:{{ b.color }};flex:none;"></div>
+                      <button onClick="{{ b.onOpen }}" style="flex:1;text-align:left;border:none;background:none;padding:8px 0;cursor:pointer;font-size:13px;line-height:1.35;color:#2B2620;">{{ b.text }}</button>
+                      <button onClick="{{ b.onNotTrue }}" style="flex:none;height:36px;padding:0 12px;border:none;border-radius:10px;background:#FFFDF8;color:#8C3B2A;font-size:12px;cursor:pointer;">Not true</button>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </sc-if>
+          <sc-if value="{{ planEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="margin:0 16px;border:1.5px dashed #D9CFBD;border-radius:28px;padding:32px 24px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;">
+              <div style="font-family:'Newsreader',serif;font-size:22px;">Nothing to suggest yet</div>
+              <button onClick="{{ openTell }}" style="height:44px;padding:0 20px;border:none;border-radius:22px;background:#2B2620;color:#F6F1E7;font-size:14px;cursor:pointer;">Tell me what you're reading</button>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <div style="padding:0 22px;font-family:'Newsreader',serif;font-size:21px;">Up next</div>
+              <div style="display:flex;gap:12px;overflow-x:auto;padding:0 22px 6px;">
+                <sc-for list="{{ more }}" as="s" hint-placeholder-count="3">
+                  <button onClick="{{ s.onFocus }}" style="flex:none;width:128px;border:none;background:none;padding:0;cursor:pointer;display:flex;flex-direction:column;gap:10px;text-align:left;color:#2B2620;">
+                    <div style="position:relative;width:128px;height:176px;border-radius:6px 14px 14px 6px;background:{{ s.cbg }};color:{{ s.cfg }};padding:12px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 20px -12px rgba(43,38,32,.5), inset 3px 0 0 rgba(0,0,0,.12);">
+                      <div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.8;">{{ s.kind }}</div>
+                      <div style="font-family:'Newsreader',serif;font-size:18px;line-height:1.05;">{{ s.title }}</div>
+                      <div style="display:flex;align-items:center;justify-content:space-between;font-size:10px;opacity:.85;">
+                        <div>{{ s.mins }}</div>
+                        <div style="width:10px;height:10px;border-radius:5px;background:{{ s.dotFill }};border:1.5px solid {{ s.cfg }};"></div>
+                      </div>
+                    </div>
+                    <div style="font-size:12px;color:#8A8174;">{{ s.when }}</div>
+                  </button>
+                </sc-for>
+              </div>
+              <div style="display:flex;gap:16px;padding:0 22px;font-size:11px;color:#8A8174;">
+                <div style="display:flex;gap:6px;align-items:center;"><div style="width:8px;height:8px;border-radius:4px;background:#8A8174;"></div>You told me</div>
+                <div style="display:flex;gap:6px;align-items:center;"><div style="width:8px;height:8px;border-radius:4px;border:1.5px solid #8A8174;"></div>Inferred</div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ hasPending }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:14px;padding:0 16px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:0 6px;">
+                <div style="display:flex;align-items:baseline;gap:10px;">
+                  <div style="font-family:'Newsreader',serif;font-size:21px;">To review</div>
+                  <div style="font-size:13px;color:#8A8174;">{{ pendPos }}</div>
+                </div>
+                <sc-if value="{{ pendMany }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ pendNext }}" style="height:36px;padding:0 14px;border:1px solid #E4DBCB;border-radius:18px;background:transparent;color:#5E564B;font-size:13px;cursor:pointer;">Next</button>
+                </sc-if>
+              </div>
+              <div style="position:relative;">
+                <sc-if value="{{ pendMany }}" hint-placeholder-val="{{ true }}">
+                  <div style="position:absolute;left:14px;right:14px;bottom:-8px;height:40px;border-radius:24px;background:#EDE5D6;"></div>
+                </sc-if>
+                <div style="position:relative;background:#FFFDF8;border-radius:26px;padding:18px;display:flex;flex-direction:column;gap:16px;box-shadow:0 12px 30px -20px rgba(43,38,32,.35);">
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="width:32px;height:32px;border-radius:10px;background:{{ pc.srcBg }};color:#FFFDF8;display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:15px;">{{ pc.glyph }}</div>
+                    <div style="flex:1;font-size:12px;color:#8A8174;">{{ pc.srcLine }}</div>
+                    <div style="font-size:11px;color:#8A5A1F;background:#F6EBDA;padding:4px 8px;border-radius:8px;">Not saved</div>
+                  </div>
+                  <div style="font-size:14px;line-height:1.45;color:#5E564B;">{{ pc.prompt }}</div>
+                  <div style="background:{{ pc.bg }};border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;">
+                    <div style="display:flex;align-items:center;justify-content:space-between;">
+                      <div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:{{ pc.color }};">{{ pc.layerName }}</div>
+                      <sc-if value="{{ pc.isPattern }}" hint-placeholder-val="{{ false }}">
+                        <div style="display:flex;gap:3px;">
+                          <sc-for list="{{ pc.dots }}" as="d" hint-placeholder-count="5"><div style="width:6px;height:6px;border-radius:3px;background:{{ d.bg }};"></div></sc-for>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ pc.isLive }}" hint-placeholder-val="{{ false }}"><div style="font-size:11px;color:#4B6A42;">{{ pc.expShort }}</div></sc-if>
+                    </div>
+                    <sc-if value="{{ pc.notEditing }}" hint-placeholder-val="{{ true }}">
+                      <div style="font-family:'Newsreader',serif;font-size:19px;line-height:1.25;">{{ pc.text }}</div>
+                    </sc-if>
+                    <sc-if value="{{ pc.editing }}" hint-placeholder-val="{{ false }}">
+                      <textarea value="{{ pendText }}" onChange="{{ onPendText }}" rows="2" style="border:none;background:#FFFDF8;border-radius:10px;padding:10px;font-size:16px;font-family:'Newsreader',serif;color:#2B2620;resize:none;outline:none;"></textarea>
+                    </sc-if>
+                  </div>
+                  <sc-if value="{{ pc.notEditing }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;gap:8px;">
+                      <button onClick="{{ pc.onKeep }}" style="flex:1;height:48px;border:none;border-radius:24px;background:#2B2620;color:#F6F1E7;font-size:14px;font-weight:500;cursor:pointer;">Keep</button>
+                      <button onClick="{{ pc.onReject }}" style="flex:1;height:48px;border:1px solid #E4DBCB;border-radius:24px;background:transparent;color:#2B2620;font-size:14px;cursor:pointer;">Not true</button>
+                      <button onClick="{{ pc.onEdit }}" aria-label="Edit" style="width:48px;height:48px;border:1px solid #E4DBCB;border-radius:24px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#5E564B;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"></path></svg></button>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ pc.editing }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;gap:8px;">
+                      <button onClick="{{ pc.onEditSave }}" style="flex:1;height:48px;border:none;border-radius:24px;background:#2B2620;color:#F6F1E7;font-size:14px;cursor:pointer;">Keep edited</button>
+                      <button onClick="{{ pc.onEditCancel }}" style="height:48px;padding:0 18px;border:none;background:none;color:#5E564B;font-size:14px;cursor:pointer;">Cancel</button>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ tabMemory }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:22px;padding:14px 16px 20px;">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:0 6px;">
+            <div style="font-family:'Newsreader',serif;font-size:32px;line-height:1.05;">What I know</div>
+            <div style="font-size:14px;color:#5E564B;">{{ memSummary }}</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <sc-for list="{{ layerTiles }}" as="L" hint-placeholder-count="4">
+              <button onClick="{{ L.onClick }}" style="height:112px;border-radius:22px;border:2px solid {{ L.ring }};background:{{ L.bg }};cursor:pointer;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;color:{{ L.color }};">
+                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+                  <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;">{{ L.tag }}</div>
+                  <div style="width:14px;height:14px;border-radius:{{ L.shapeR }};border:{{ L.shapeBd }};background:{{ L.shapeBg }};"></div>
+                </div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;width:100%;">
+                  <div style="font-size:15px;font-weight:500;">{{ L.name }}</div>
+                  <div style="font-family:'Newsreader',serif;font-size:30px;line-height:1;">{{ L.count }}</div>
+                </div>
+              </button>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;height:48px;background:#FFFDF8;border-radius:24px;padding:0 18px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8174" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+            <input value="{{ q }}" onChange="{{ onQ }}" placeholder="Search" style="flex:1;height:44px;border:none;background:none;font-size:15px;color:#2B2620;outline:none;">
+          </div>
+          <sc-for list="{{ layers }}" as="L" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <button onClick="{{ L.onToggleOpen }}" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 14px;min-height:60px;border:none;border-radius:20px;background:{{ L.headBg }};cursor:pointer;text-align:left;color:{{ L.color }};transition:background .2s;">
+                <div style="width:34px;height:34px;flex:none;border-radius:11px;background:{{ L.bg }};display:flex;align-items:center;justify-content:center;">
+                  <div style="width:12px;height:12px;border-radius:{{ L.shapeR }};border:{{ L.shapeBd }};background:{{ L.shapeBg }};"></div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+                  <div style="font-family:'Newsreader',serif;font-size:19px;line-height:1.1;">{{ L.name }}</div>
+                  <div style="font-size:12px;color:#8A8174;">{{ L.countLabel }}</div>
+                </div>
+                <div style="width:30px;height:30px;border-radius:15px;background:{{ L.bg }};display:flex;align-items:center;justify-content:center;transform:rotate({{ L.rot }}deg);transition:transform .25s;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></div>
+              </button>
+              <sc-if value="{{ L.open }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:8px;">
+              <sc-for list="{{ L.items }}" as="m" hint-placeholder-count="2">
+                <div style="background:#FFFDF8;border-radius:20px;border:{{ m.cardBd }};overflow:hidden;">
+                  <button onClick="{{ m.onOpen }}" style="width:100%;text-align:left;border:none;background:none;padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:14px;color:#2B2620;">
+                    <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+                      <div style="font-family:'Newsreader',serif;font-size:17px;line-height:1.3;">{{ m.text }}</div>
+                      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#8A8174;">
+                        <div style="width:18px;height:18px;border-radius:6px;background:{{ m.srcBg }};color:#FFFDF8;display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:11px;">{{ m.srcCode }}</div>
+                        <div>{{ m.shortMeta }}</div>
+                      </div>
+                    </div>
+                    <sc-if value="{{ m.hasConf }}" hint-placeholder-val="{{ false }}">
+                      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex:none;">
+                        <div style="display:flex;gap:3px;"><sc-for list="{{ m.dots }}" as="d" hint-placeholder-count="5"><div style="width:6px;height:6px;border-radius:3px;background:{{ d.bg }};"></div></sc-for></div>
+                        <div style="font-size:10px;color:#3D5C7A;">{{ m.confWord }}</div>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ m.isLive }}" hint-placeholder-val="{{ false }}">
+                      <div style="width:42px;height:42px;flex:none;border-radius:21px;background:{{ m.ringBg }};display:flex;align-items:center;justify-content:center;">
+                        <div style="width:34px;height:34px;border-radius:17px;background:#FFFDF8;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;">
+                          <div style="font-family:'Newsreader',serif;font-size:15px;color:#4B6A42;">{{ m.daysLeft }}</div>
+                          <div style="font-size:8px;color:#4B6A42;">days</div>
+                        </div>
+                      </div>
+                    </sc-if>
+                    <div onClick="{{ m.onEdit }}" role="button" aria-label="Edit" style="width:34px;height:34px;flex:none;border-radius:17px;background:#F6F1E7;display:flex;align-items:center;justify-content:center;color:#5E564B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"></path></svg></div>
+                  </button>
+                  <sc-if value="{{ m.stale }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;align-items:center;gap:6px;background:#F6EBDA;padding:6px 8px 6px 16px;">
+                      <div style="flex:1;font-size:13px;color:#8A5A1F;">Still true?</div>
+                      <button onClick="{{ m.onStill }}" style="height:34px;padding:0 14px;border:none;border-radius:17px;background:#FFFDF8;color:#2B2620;font-size:13px;cursor:pointer;">Yes</button>
+                      <button onClick="{{ m.onNoLonger }}" style="height:34px;padding:0 12px;border:none;background:none;color:#8C3B2A;font-size:13px;cursor:pointer;">No</button>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+              <sc-if value="{{ L.empty }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:13px;color:#8A8174;padding:6px 0;text-align:center;">{{ L.emptyText }}</div>
+              </sc-if>
+              <sc-if value="{{ L.adding }}" hint-placeholder-val="{{ false }}">
+                <div style="background:#FFFDF8;border-radius:20px;padding:12px;display:flex;flex-direction:column;gap:10px;border:1.5px solid {{ L.color }};">
+                  <textarea value="{{ addText }}" onChange="{{ onAddText }}" rows="2" placeholder="{{ L.addPh }}" style="border:none;background:{{ L.bg }};border-radius:12px;padding:10px 12px;font-size:16px;font-family:'Newsreader',serif;color:#2B2620;resize:none;outline:none;"></textarea>
+                  <div style="font-size:12px;color:#8A8174;padding:0 4px;">{{ L.addNote }}</div>
+                  <div style="display:flex;gap:8px;">
+                    <button onClick="{{ L.onAddSave }}" style="flex:1;height:44px;border:none;border-radius:22px;background:#2B2620;color:#F6F1E7;font-size:14px;cursor:pointer;opacity:{{ addOpacity }};">Add to {{ L.name }}</button>
+                    <button onClick="{{ cancelAdd }}" style="height:44px;padding:0 16px;border:none;background:none;color:#5E564B;font-size:14px;cursor:pointer;">Cancel</button>
+                  </div>
+                </div>
+              </sc-if>
+              <div style="display:flex;gap:8px;">
+                <sc-if value="{{ L.notAdding }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ L.onAdd }}" style="flex:1;height:46px;border:1.5px dashed #D9CFBD;border-radius:23px;background:transparent;color:#5E564B;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Add</button>
+                </sc-if>
+                <sc-if value="{{ L.hasItems }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ L.onClear }}" style="height:46px;padding:0 16px;border:none;border-radius:23px;background:transparent;color:#8C3B2A;font-size:13px;cursor:pointer;">Forget all</button>
+                </sc-if>
+              </div>
+              </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ tabSources }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:22px;padding:14px 16px 20px;">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:0 6px;">
+            <div style="font-family:'Newsreader',serif;font-size:32px;line-height:1.05;">Sources</div>
+            <div style="font-size:14px;color:#5E564B;">{{ connSummary }}</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <sc-for list="{{ connRows }}" as="c" hint-placeholder-count="7">
+              <div style="background:#FFFDF8;border-radius:22px;padding:14px;display:flex;flex-direction:column;gap:14px;opacity:{{ c.opacity }};transition:opacity .2s;">
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+                  <div style="width:46px;height:46px;border-radius:14px;background:{{ c.tileBg }};color:{{ c.tileFg }};display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:22px;transition:background .2s;">{{ c.glyph }}</div>
+                  <button onClick="{{ c.onToggle }}" aria-label="Toggle source" style="width:46px;height:40px;border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:flex-end;">
+                    <div style="width:42px;height:26px;border-radius:13px;background:{{ c.tgBg }};padding:3px;transition:background .2s;"><div style="width:20px;height:20px;border-radius:10px;background:#FFFDF8;transform:translateX({{ c.tgX }}px);transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2);"></div></div>
+                  </button>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:3px;">
+                  <div style="font-size:15px;font-weight:500;">{{ c.name }}</div>
+                  <div style="font-size:12px;line-height:1.35;color:#8A8174;">{{ c.reads }}</div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #EEE7D9;padding-top:10px;min-height:30px;">
+                  <div style="font-size:12px;color:#5E564B;">{{ c.statusLine }}</div>
+                  <sc-if value="{{ c.hasMem }}" hint-placeholder-val="{{ false }}">
+                    <button onClick="{{ c.onRemove }}" style="height:30px;border:none;background:none;padding:0;color:#8C3B2A;font-size:12px;cursor:pointer;">Forget</button>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ tabPrivacy }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:28px;padding:14px 16px 20px;">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:0 6px;">
+            <div style="font-family:'Newsreader',serif;font-size:32px;line-height:1.05;">Privacy</div>
+            <div style="font-size:14px;color:#5E564B;">You're in control. No double-checks.</div>
+          </div>
+
+          <div style="background:#FFFDF8;border-radius:24px;padding:18px;display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;">
+              <div style="font-size:14px;font-weight:500;">Where memories come from</div>
+              <div style="font-family:'Newsreader',serif;font-size:22px;">{{ memCount }}</div>
+            </div>
+            <div style="display:flex;gap:3px;height:14px;border-radius:7px;overflow:hidden;background:#EEE7D9;">
+              <sc-for list="{{ srcBar }}" as="b" hint-placeholder-count="5"><div style="width:{{ b.w }};background:{{ b.bg }};transition:width .3s;"></div></sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="padding:0 6px;font-family:'Newsreader',serif;font-size:20px;">How I learn</div>
+            <sc-for list="{{ mechRows }}" as="r" hint-placeholder-count="5">
+              <div style="display:flex;gap:12px;align-items:center;padding:10px 12px 10px 14px;background:#FFFDF8;border-radius:18px;">
+                <div style="width:36px;height:36px;flex:none;border-radius:11px;background:{{ r.bg }};color:#FFFDF8;display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:17px;">{{ r.code }}</div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:3px;">
+                  <div style="font-size:14px;font-weight:500;">{{ r.name }}</div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#8A8174;">
+                    <div style="color:{{ r.ruleColor }};">{{ r.rule }}</div>
+                    <sc-if value="{{ r.hasMem }}" hint-placeholder-val="{{ false }}">
+                      <div>·</div>
+                      <button onClick="{{ r.onForget }}" style="border:none;background:none;padding:0;color:#8C3B2A;font-size:12px;cursor:pointer;">Forget {{ r.n }}</button>
+                    </sc-if>
+                  </div>
+                </div>
+                <sc-if value="{{ r.locked }}" hint-placeholder-val="{{ false }}"><div style="font-size:12px;color:#8A8174;padding-right:4px;">Always on</div></sc-if>
+                <sc-if value="{{ r.toggleable }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ r.onToggle }}" aria-label="Toggle" style="width:50px;height:44px;border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;">
+                    <div style="width:48px;height:30px;border-radius:15px;background:{{ r.tgBg }};padding:3px;transition:background .2s;"><div style="width:24px;height:24px;border-radius:12px;background:#FFFDF8;transform:translateX({{ r.tgX }}px);transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2);"></div></div>
+                  </button>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="background:#2B2620;color:#F6F1E7;border-radius:28px;padding:22px;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden;">
+            <div style="position:absolute;right:-40px;top:-40px;width:150px;height:150px;border-radius:50%;background:#3A342D;"></div>
+            <div style="position:absolute;right:-12px;top:-58px;width:150px;height:150px;border-radius:50%;background:#2B2620;"></div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-family:'Newsreader',serif;font-size:26px;line-height:1.1;">Take it with you</div>
+              <div style="font-size:13px;color:#BDB3A3;">Every item, with its source and history.</div>
+            </div>
+            <div style="position:relative;display:flex;gap:8px;">
+              <button onClick="{{ exportJson }}" style="flex:1;height:48px;border:none;border-radius:24px;background:#F6F1E7;color:#2B2620;font-size:14px;font-weight:500;cursor:pointer;">JSON</button>
+              <button onClick="{{ exportText }}" style="flex:1;height:48px;border:1px solid #5E564B;border-radius:24px;background:transparent;color:#F6F1E7;font-size:14px;cursor:pointer;">Summary</button>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="padding:0 6px;font-family:'Newsreader',serif;font-size:20px;">Forget a layer</div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+              <sc-for list="{{ layerForget }}" as="L" hint-placeholder-count="4">
+                <button onClick="{{ L.onClear }}" style="height:84px;border-radius:18px;border:none;background:{{ L.bg }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:{{ L.color }};opacity:{{ L.opacity }};">
+                  <div style="font-family:'Newsreader',serif;font-size:24px;line-height:1;">{{ L.n }}</div>
+                  <div style="font-size:11px;">{{ L.name }}</div>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="padding:0 6px;font-family:'Newsreader',serif;font-size:20px;">Recent</div>
+            <div style="background:#FFFDF8;border-radius:22px;padding:4px 16px;display:flex;flex-direction:column;">
+              <sc-for list="{{ logRows }}" as="l" hint-placeholder-count="3">
+                <div style="display:flex;gap:12px;padding:12px 0;border-top:{{ l.bd }};font-size:13px;line-height:1.4;">
+                  <div style="width:44px;flex:none;color:#8A8174;">{{ l.t }}</div>
+                  <div style="flex:1;">{{ l.text }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <button onClick="{{ forgetAll }}" style="height:52px;border:none;border-radius:26px;background:#F3E2DC;color:#8C3B2A;font-size:15px;cursor:pointer;">Forget everything</button>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;bottom:0;height:96px;background:linear-gradient(rgba(246,241,231,0),#F6F1E7 40%);pointer-events:none;"></div>
+    <div style="position:absolute;left:16px;right:16px;bottom:26px;height:64px;border-radius:32px;background:#FFFDF8;box-shadow:0 12px 30px -12px rgba(43,38,32,.3);display:flex;align-items:center;justify-content:space-around;padding:0 6px;">
+      <button onClick="{{ tToday.onClick }}" aria-label="Today" style="position:relative;width:52px;height:52px;border:none;border-radius:26px;background:{{ tToday.bg }};color:{{ tToday.fg }};cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5c-.8 0-1.5-.7-1.5-1.5z"></path><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"></path></svg>
+        <sc-if value="{{ tToday.hasBadge }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;top:8px;right:8px;width:9px;height:9px;border-radius:5px;background:#C0772E;border:2px solid #FFFDF8;"></div></sc-if>
+      </button>
+      <button onClick="{{ tMemory.onClick }}" aria-label="Memory" style="width:52px;height:52px;border:none;border-radius:26px;background:{{ tMemory.bg }};color:{{ tMemory.fg }};cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"></path><path d="M3 12.5l9 5 9-5"></path><path d="M3 17l9 5 9-5"></path></svg>
+      </button>
+      <button onClick="{{ openTell }}" aria-label="Tell me" style="width:52px;height:52px;border:none;border-radius:26px;background:#2B2620;color:#F6F1E7;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+      </button>
+      <button onClick="{{ tSources.onClick }}" aria-label="Sources" style="width:52px;height:52px;border:none;border-radius:26px;background:{{ tSources.bg }};color:{{ tSources.fg }};cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="7" height="7" rx="2"></rect><rect x="13" y="4" width="7" height="7" rx="2"></rect><rect x="4" y="13" width="7" height="7" rx="2"></rect><rect x="13" y="13" width="7" height="7" rx="2"></rect></svg>
+      </button>
+      <button onClick="{{ tPrivacy.onClick }}" aria-label="Privacy" style="width:52px;height:52px;border:none;border-radius:26px;background:{{ tPrivacy.bg }};color:{{ tPrivacy.fg }};cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6z"></path></svg>
+      </button>
+    </div>
+    <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#2B2620;"></div>
+
+    <sc-if value="{{ hasSel }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;justify-content:flex-end;">
+        <div onClick="{{ closeSel }}" style="position:absolute;inset:0;background:rgba(30,27,23,.4);"></div>
+        <div style="position:relative;max-height:90%;overflow-y:auto;background:#F6F1E7;border-radius:32px 32px 0 0;padding:10px 16px 36px;display:flex;flex-direction:column;gap:20px;">
+          <div style="align-self:center;width:36px;height:5px;border-radius:3px;background:#D9CFBD;"></div>
+          <div style="background:{{ sel.bg }};border-radius:26px;padding:20px;display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div style="display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:{{ sel.color }};">
+                <div style="width:10px;height:10px;border-radius:{{ sel.shapeR }};border:{{ sel.shapeBd }};background:{{ sel.shapeBg }};"></div>{{ sel.layerName }} · {{ sel.tag }}
+              </div>
+              <button onClick="{{ closeSel }}" aria-label="Close" style="width:34px;height:34px;border-radius:17px;border:none;background:#FFFDF8;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#5E564B;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+            </div>
+            <sc-if value="{{ sel.notEditing }}" hint-placeholder-val="{{ true }}">
+              <div style="font-family:'Newsreader',serif;font-size:26px;line-height:1.2;text-wrap:pretty;">{{ sel.text }}</div>
+            </sc-if>
+            <sc-if value="{{ sel.editing }}" hint-placeholder-val="{{ false }}">
+              <textarea value="{{ editText }}" onChange="{{ onEditText }}" rows="3" style="border:none;background:#FFFDF8;border-radius:14px;padding:12px;font-size:18px;font-family:'Newsreader',serif;color:#2B2620;resize:none;outline:none;"></textarea>
+            </sc-if>
+            <sc-if value="{{ sel.hasConf }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="display:flex;gap:4px;"><sc-for list="{{ sel.dots }}" as="d" hint-placeholder-count="5"><div style="width:8px;height:8px;border-radius:4px;background:{{ d.bg }};"></div></sc-for></div>
+                <div style="font-size:13px;color:#3D5C7A;">{{ sel.confWord }} · {{ sel.basis }}</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ sel.isLive }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="flex:1;height:5px;border-radius:3px;background:#D5E0CB;"><div style="height:5px;border-radius:3px;background:#4B6A42;width:{{ sel.expPct }};"></div></div>
+                <div style="font-size:13px;color:#4B6A42;">{{ sel.expLine }}</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ sel.isPref }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:13px;color:#8A5A1F;">Last confirmed {{ sel.confirmedFmt }}</div>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ sel.editing }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <sc-if value="{{ sel.isIdentity }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:13px;color:#5E564B;padding:0 6px;">Identity changes are reviewed before saving.</div>
+              </sc-if>
+              <div style="display:flex;gap:8px;">
+                <button onClick="{{ editPrimary }}" style="flex:1;height:50px;border:none;border-radius:25px;background:#2B2620;color:#F6F1E7;font-size:14px;cursor:pointer;">{{ sel.editPrimaryLabel }}</button>
+                <button onClick="{{ editCancel }}" style="height:50px;padding:0 18px;border:none;background:none;color:#5E564B;font-size:14px;cursor:pointer;">Cancel</button>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ sel.reviewing }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;border-radius:22px;padding:16px;">
+              <div style="font-size:14px;font-weight:500;">Confirm identity change</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <div style="background:#F3E2DC;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:4px;"><div style="font-size:11px;color:#8C3B2A;">Before</div><div style="font-size:14px;line-height:1.35;">{{ sel.text }}</div></div>
+                <div style="background:#EAF0E3;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:4px;"><div style="font-size:11px;color:#4B6A42;">After</div><div style="font-size:14px;line-height:1.35;">{{ editText }}</div></div>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <button onClick="{{ confirmIdentity }}" style="flex:1;height:48px;border:none;border-radius:24px;background:#2B2620;color:#F6F1E7;font-size:14px;cursor:pointer;">Confirm</button>
+                <button onClick="{{ editCancel }}" style="height:48px;padding:0 16px;border:none;background:none;color:#5E564B;font-size:14px;cursor:pointer;">Keep original</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <div style="display:flex;flex-direction:column;gap:14px;padding:0 6px;">
+            <div style="font-family:'Newsreader',serif;font-size:20px;">How I know this</div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:40px;height:40px;flex:none;border-radius:13px;background:{{ sel.srcBg }};color:#FFFDF8;display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:18px;">{{ sel.srcCode }}</div>
+              <div style="display:flex;flex-direction:column;gap:2px;">
+                <div style="font-size:14px;font-weight:500;">{{ sel.srcName }}</div>
+                <div style="font-size:12px;color:#8A8174;">{{ sel.certainty }}</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;">
+              <sc-for list="{{ sel.steps }}" as="st" hint-placeholder-count="2">
+                <div style="display:flex;gap:14px;">
+                  <div style="display:flex;flex-direction:column;align-items:center;width:40px;flex:none;">
+                    <div style="width:8px;height:8px;border-radius:4px;background:{{ st.dot }};margin-top:6px;"></div>
+                    <div style="flex:1;width:1.5px;background:{{ st.line }};"></div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px;padding-bottom:14px;">
+                    <div style="font-size:14px;line-height:1.45;">{{ st.text }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <sc-for list="{{ sel.facts }}" as="f" hint-placeholder-count="2">
+              <div style="background:#FFFDF8;border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;">
+                <div style="font-size:11px;color:#8A8174;">{{ f.k }}</div>
+                <div style="font-size:14px;">{{ f.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ sel.hasUses }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;gap:10px;padding:0 6px;font-size:13px;color:#5E564B;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5c-.8 0-1.5-.7-1.5-1.5z"></path><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"></path></svg>
+              <div>Shaping: {{ sel.usesText }}</div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ sel.notEditing }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;gap:8px;">
+              <button onClick="{{ forgetSel }}" style="flex:1;height:52px;border:none;border-radius:26px;background:#8C3B2A;color:#FFFDF8;font-size:14px;font-weight:500;cursor:pointer;">Forget</button>
+              <sc-if value="{{ sel.isPref }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ reconfirmSel }}" style="flex:1;height:52px;border:none;border-radius:26px;background:#FFFDF8;color:#2B2620;font-size:14px;cursor:pointer;">Still true</button>
+              </sc-if>
+              <button onClick="{{ startEdit }}" style="flex:1;height:52px;border:none;border-radius:26px;background:#FFFDF8;color:#2B2620;font-size:14px;cursor:pointer;">Edit</button>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ tellOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;justify-content:flex-end;">
+        <div onClick="{{ closeTell }}" style="position:absolute;inset:0;background:rgba(30,27,23,.4);"></div>
+        <div style="position:relative;background:#F6F1E7;border-radius:32px 32px 0 0;padding:10px 20px 36px;display:flex;flex-direction:column;gap:18px;">
+          <div style="align-self:center;width:36px;height:5px;border-radius:3px;background:#D9CFBD;"></div>
+          <div style="display:flex;gap:4px;background:#EEE7D9;padding:4px;border-radius:22px;">
+            <sc-for list="{{ tellModes }}" as="c" hint-placeholder-count="2">
+              <button onClick="{{ c.onClick }}" style="flex:1;height:40px;border:none;border-radius:18px;background:{{ c.bg }};color:#2B2620;font-size:14px;cursor:pointer;box-shadow:{{ c.sh }};">{{ c.label }}</button>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ modeRemember }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <textarea value="{{ tellText }}" onChange="{{ onTellText }}" rows="3" placeholder="Something I should remember…" style="border:none;background:#FFFDF8;border-radius:20px;padding:16px;font-size:19px;font-family:'Newsreader',serif;color:#2B2620;resize:none;outline:none;"></textarea>
+              <div style="display:flex;gap:8px;overflow-x:auto;margin:0 -20px;padding:0 20px;">
+                <sc-for list="{{ tellSeeds }}" as="c" hint-placeholder-count="3">
+                  <button onClick="{{ c.onClick }}" style="flex:none;height:36px;padding:0 14px;border-radius:18px;border:1px solid #D9CFBD;background:transparent;color:#5E564B;font-size:13px;cursor:pointer;">{{ c.label }}</button>
+                </sc-for>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+                <sc-for list="{{ tellLayers }}" as="c" hint-placeholder-count="3">
+                  <button onClick="{{ c.onClick }}" style="height:64px;border-radius:16px;border:2px solid {{ c.ring }};background:{{ c.bg }};color:{{ c.color }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:13px;">
+                    <div style="width:10px;height:10px;border-radius:{{ c.shapeR }};border:{{ c.shapeBd }};background:{{ c.shapeBg }};"></div>{{ c.label }}
+                  </button>
+                </sc-for>
+              </div>
+              <div style="font-size:12px;color:#8A8174;text-align:center;">{{ tellNote }}</div>
+              <button onClick="{{ saveTell }}" style="height:54px;border:none;border-radius:27px;background:#2B2620;color:#F6F1E7;font-size:15px;font-weight:500;cursor:pointer;opacity:{{ tellOpacity }};">Save</button>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ modeTalk }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <div style="display:flex;flex-direction:column;gap:8px;min-height:120px;justify-content:flex-end;">
+                <sc-if value="{{ chatEmpty }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-family:'Newsreader',serif;font-style:italic;font-size:19px;color:#8A8174;text-align:center;padding:10px 0;">How's your day looking?</div>
+                </sc-if>
+                <sc-for list="{{ chat }}" as="m" hint-placeholder-count="0">
+                  <div style="display:flex;justify-content:{{ m.justify }};">
+                    <div style="max-width:82%;padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.45;background:{{ m.bg }};color:{{ m.fg }};">{{ m.text }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <sc-if value="{{ chatEmpty }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;gap:8px;overflow-x:auto;margin:0 -20px;padding:0 20px;">
+                  <sc-for list="{{ chatSeeds }}" as="c" hint-placeholder-count="2">
+                    <button onClick="{{ c.onClick }}" style="flex:none;height:36px;padding:0 14px;border-radius:18px;border:1px solid #D9CFBD;background:transparent;color:#5E564B;font-size:13px;cursor:pointer;">{{ c.label }}</button>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <div style="display:flex;gap:8px;align-items:center;background:#FFFDF8;border-radius:26px;padding:4px 4px 4px 18px;">
+                <input value="{{ chatIn }}" onChange="{{ onChatIn }}" onKeyDown="{{ onChatKey }}" placeholder="Message" style="flex:1;height:44px;border:none;background:none;font-size:15px;color:#2B2620;outline:none;">
+                <button onClick="{{ onChatSend }}" aria-label="Send" style="width:44px;height:44px;border:none;border-radius:22px;background:#2B2620;color:#F6F1E7;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></button>
+              </div>
+              <div style="font-size:12px;color:#8A8174;text-align:center;">I'll ask before keeping anything.</div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;left:16px;right:16px;bottom:102px;z-index:30;background:#2B2620;color:#F6F1E7;border-radius:22px;padding:6px 6px 6px 18px;display:flex;align-items:center;gap:10px;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);">
+        <div style="flex:1;font-size:14px;line-height:1.4;padding:10px 0;">{{ toastMsg }}</div>
+        <sc-if value="{{ toastUndo }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ undo }}" style="height:40px;padding:0 16px;border:none;border-radius:20px;background:#44403A;color:#F6F1E7;font-size:14px;cursor:pointer;">Undo</button>
+        </sc-if>
+      </div>
+    </sc-if>
+  </sc-if>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startAt&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;onboarding&quot;,&quot;app&quot;],&quot;default&quot;:&quot;onboarding&quot;,&quot;tsType&quot;:&quot;'onboarding'|'app'&quot;},&quot;expiryDays&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[7,10,14],&quot;default&quot;:7,&quot;tsType&quot;:&quot;number&quot;},&quot;staleAfterDays&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;min&quot;:14,&quot;max&quot;:180,&quot;default&quot;:60,&quot;tsType&quot;:&quot;number&quot;}}">
+const NOW = new Date(2026, 8, 24, 9, 41);
+const DAY = 864e5;
+const ago = (n, h = 20) => { const x = new Date(NOW.getTime() - n * DAY); x.setHours(h, 12, 0, 0); return x.toISOString(); };
+const fmt = iso => new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+const daysSince = iso => Math.floor((NOW - new Date(iso)) / DAY);
+const list = a => a.length <= 1 ? (a[0] || '') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1];
+const clip = (t, n = 34) => t.length > n ? t.slice(0, n - 2) + '…' : t;
+
+const SRC = {
+  explicit: { code: 'a', name: 'Told directly', short: 'Saves directly', color: '#2B2620' },
+  behavioral: { code: 'b', name: 'In-app behavior', short: 'What you start or skip', color: '#8A5A1F' },
+  conversational: { code: 'c', name: 'Conversation', short: 'Things you mention', color: '#7A3B2E' },
+  ambient: { code: 'd', name: 'Passive signals', short: 'Calendar, place type', color: '#4B6A42' },
+  crossapp: { code: 'e', name: 'Connected apps', short: 'Kindle, podcasts, more', color: '#33486A' },
+};
+const MECH_ORDER = ['explicit', 'behavioral', 'conversational', 'ambient', 'crossapp'];
+const LAYERS = [
+  { id: 'identity', name: 'Identity', tag: 'Stable', color: '#2B2620', bg: '#EAE2D3', cardBd: 'none', shapeR: '3px', shapeBd: 'none', shapeBg: '#2B2620', empty: 'No stable facts.' },
+  { id: 'preference', name: 'Preferences', tag: 'Confirmed', color: '#8A5A1F', bg: '#F4E7D3', cardBd: 'none', shapeR: '50%', shapeBd: 'none', shapeBg: '#C0772E', empty: 'No preferences.' },
+  { id: 'pattern', name: 'Patterns', tag: 'Probable', color: '#3D5C7A', bg: '#E4EAF0', cardBd: 'none', shapeR: '50%', shapeBd: '2px solid #3D5C7A', shapeBg: 'transparent', empty: 'No patterns.' },
+  { id: 'live', name: 'Live', tag: 'Temporary', color: '#4B6A42', bg: '#E6EDDF', cardBd: '1.5px dashed #B8C9AB', shapeR: '50%', shapeBd: '2px dashed #4B6A42', shapeBg: 'transparent', empty: 'Nothing current.' },
+];
+const LBY = Object.fromEntries(LAYERS.map(l => [l.id, l]));
+const CONNS = [
+  { id: 'kindle', name: 'Kindle', glyph: 'K', mech: 'crossapp', reads: 'Progress, highlights', color: '#33486A' },
+  { id: 'podcasts', name: 'Podcasts', glyph: 'P', mech: 'crossapp', reads: 'Episodes played', color: '#5B4163' },
+  { id: 'calendar', name: 'Calendar', glyph: 'C', mech: 'ambient', reads: 'Event titles, free time', color: '#7A3B2E' },
+  { id: 'notes', name: 'Notes', glyph: 'N', mech: 'crossapp', reads: 'Only #reading notes', color: '#C9A45C' },
+  { id: 'readlater', name: 'Read-later', glyph: 'R', mech: 'crossapp', reads: 'Saved article topics', color: '#8A5A1F' },
+  { id: 'location', name: 'Location', glyph: 'L', mech: 'ambient', reads: 'Place type only', color: '#4B6A42' },
+  { id: 'shelf', name: 'Bookshelf', glyph: 'S', mech: 'crossapp', reads: 'Shelves, ratings', color: '#2B2620' },
+];
+const CBY = Object.fromEntries(CONNS.map(c => [c.id, c]));
+const GOALS = ['Learn a new field', 'Finish what I start', 'Read more fiction', 'Read instead of scrolling'];
+const TOPICS = [['Cognitive science', '#33486A', '#F1E6D0'], ['Design', '#C9A45C', '#2B2620'], ['History', '#7A3B2E', '#F3E3CF'], ['Climate', '#4B6A42', '#EFEAD8'], ['Fiction', '#5B4163', '#F0E4EC'], ['Economics', '#D8CBB3', '#2B2620']];
+const TIMES = [['Morning', '#E9C98A'], ['Commute', '#D8B27A'], ['Lunch', '#E2A95C'], ['Evening', '#B7684A'], ['Night', '#4A4560']];
+const FORMATS = ['Books', 'Articles', 'Podcasts'];
+const confWord = c => c < 0.45 ? 'Low' : c < 0.7 ? 'Moderate' : 'Fairly high';
+const dots = (c, on = '#3D5C7A', off = '#D3DDE7') => [0, 1, 2, 3, 4].map(i => ({ bg: i < Math.round((c || 0) * 5) ? on : off }));
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.state = {
+      screen: 'onboarding', ob: 0,
+      name: 'Maya', role: 'Product designer',
+      goals: ['Learn a new field', 'Finish what I start'], topics: ['Cognitive science', 'Design'],
+      times: ['Evening'], len: '20', formats: ['Books', 'Articles'],
+      mech: { explicit: true, behavioral: true, conversational: true, ambient: true, crossapp: true },
+      conns: { kindle: true, podcasts: true, calendar: true, notes: false, readlater: true, location: true, shelf: true },
+      mem: [], pending: [], sugg: {}, openWhy: false, focus: null, pIdx: 0, tab: 'today',
+      sel: null, editStage: null, editText: '', tell: false, tellMode: 'remember', tellText: '', tellLayer: 'preference',
+      chatIn: '', chat: [], q: '', filter: 'all', toast: null, log: [], pendEdit: null, pendText: '', morningAsked: false, openL: {}, addFor: null, addText: '',
+    };
+    this.scrollRef = React.createRef();
+    if (p.startAt === 'app') Object.assign(this.state, this.seed(this.state));
+  }
+  get expiry() { return Number(this.props.expiryDays ?? 7); }
+  get staleDays() { return Number(this.props.staleAfterDays ?? 60); }
+
+  seed(s) {
+    const T = NOW.toISOString();
+    const E = (id, layer, text, detail, steps, created) => ({ id, layer, text, source: 'explicit', detail, steps, created, confirmed: created });
+    const obSteps = ['You chose this during onboarding.', 'Saved directly — you said it.'];
+    const mem = [
+      E('i_name', 'identity', `Your name is ${s.name}.`, 'Onboarding', obSteps, T),
+      E('i_role', 'identity', `You work as a ${s.role.toLowerCase()}.`, 'Onboarding', obSteps, T),
+      E('i_club', 'identity', 'Monthly book club with Jonah and Priya.', 'Tell me, Sep 2', ['You wrote: "I\u2019m in a book club with Jonah and Priya."', 'Saved directly as a stable fact.'], ago(22)),
+      E('p_topics', 'preference', `Drawn to ${list(s.topics.map(t => t.toLowerCase()))}.`, 'Onboarding', obSteps, T),
+      E('p_goals', 'preference', `Goals: ${list(s.goals.map(t => t.toLowerCase()))}.`, 'Onboarding', obSteps, T),
+      E('p_rhythm', 'preference', `~${s.len}-minute sessions, ${list(s.times.map(t => t.toLowerCase()))}.`, 'Onboarding', obSteps, T),
+      E('p_format', 'preference', `Prefers ${list(s.formats.map(t => t.toLowerCase()))}.`, 'Onboarding', obSteps, T),
+      E('p_selfhelp', 'preference', 'No self-help, please.', 'Tell me, Jun 30', ['You wrote: "Please don\u2019t suggest self-help books."', 'Saved directly.'], ago(86)),
+      { id: 'p_print', layer: 'preference', text: 'Paper for fiction, digital for nonfiction.', source: 'conversational', detail: 'Conversation, Jul 12', steps: ['You said: "I can only read novels on paper."', 'Umbra proposed it as a preference.', 'You tapped Keep.'], created: ago(74), confirmed: ago(74) },
+      { id: 'pt_evening', layer: 'pattern', text: 'You read most between 9 and 10:30 pm.', source: 'behavioral', detail: 'Session start times', steps: ['19 sessions logged over 12 days.', '14 started between 9:00 and 10:30 pm.', 'You confirmed it on Sep 14.'], created: ago(10), confirmed: ago(10), confidence: 0.64, basis: '12 days of data' },
+      { id: 'pt_stall', layer: 'pattern', text: 'Long books tend to stall mid-way.', source: 'crossapp', conn: 'kindle', detail: 'Kindle progress', steps: ['Kindle shared 7 books over 400 pages.', '5 stopped moving between 40% and 60%.', 'Small sample, so confidence stays low.'], created: ago(16), confirmed: ago(16), confidence: 0.42, basis: '7 books' },
+      { id: 'pt_highlight', layer: 'pattern', text: 'You highlight passages on memory and attention.', source: 'crossapp', conn: 'kindle', detail: 'Kindle highlights', steps: ['84 highlights from the last 6 weeks.', '51 relate to memory or attention.', 'You confirmed it on Sep 11.'], created: ago(13), confirmed: ago(13), confidence: 0.73, basis: '84 highlights' },
+      { id: 'pt_commute', layer: 'pattern', text: 'Podcasts fill your Tue/Thu commutes.', source: 'crossapp', conn: 'podcasts', detail: 'Listening history', steps: ['9 weeks of listening times.', 'Plays cluster Tue and Thu, 8–9 am.', 'You confirmed it on Sep 5.'], created: ago(19), confirmed: ago(19), confidence: 0.58, basis: '9 weeks' },
+      { id: 'l_book', layer: 'live', text: 'Reading The Extended Mind (62%).', source: 'crossapp', conn: 'kindle', detail: 'Kindle progress', steps: ['Kindle reported progress yesterday.', 'You confirmed tracking it.'], created: ago(1) },
+      { id: 'l_talk', layer: 'live', text: 'Preparing a talk on attention, Oct 8.', source: 'conversational', detail: 'Conversation, Sep 20', steps: ['You said: "I\u2019m giving a talk on attention on the 8th."', 'You tapped Keep.'], created: ago(4) },
+      { id: 'l_club', layer: 'live', text: 'Book club meets Wed, Sep 30.', source: 'ambient', conn: 'calendar', detail: 'Calendar event', steps: ['Calendar event "Book club" on Sep 30.', 'Linked to your book club (Identity).', 'You tapped Keep.'], created: ago(2) },
+    ];
+    const pending = [
+      { id: 'q_flight', memId: 'l_flight', source: 'ambient', conn: 'calendar', prompt: 'A 3-hour flight on Saturday morning is on your calendar.', layer: 'live', text: 'Saturday flight: ~3 hours offline.', steps: ['Calendar event "LHR → LIS", Sat Sep 26, 7:40–10:45.'] },
+      { id: 'q_econ', source: 'behavioral', prompt: 'You skipped 3 economics articles this week.', layer: 'preference', text: 'Economics can wait for now.', steps: ['"Not now" on 3 economics articles, Sep 21–23.'] },
+      { id: 'q_sleep', source: 'crossapp', conn: 'readlater', prompt: 'You saved 6 articles about sleep this month.', layer: 'pattern', text: 'A growing interest in sleep science.', conf: 0.52, basis: '6 saves in 3 weeks', steps: ['Read-later shared 6 articles tagged sleep, Sep 3–22.'] },
+      { id: 'q_library', source: 'ambient', conn: 'location', prompt: 'You opened Umbra at a library three Saturdays running.', layer: 'pattern', text: 'Saturday mornings may be long-reading time.', conf: 0.35, basis: '3 Saturdays', steps: ['Location: "library" on Sep 5, 12 and 19.', 'Only the place type is kept.'] },
+    ];
+    const kept = mem.filter(m => m.source === 'explicit' || (s.mech[m.source] && (!m.conn || s.conns[m.conn])));
+    return {
+      screen: 'app', mem: kept, pending, pIdx: 0,
+      log: [
+        { t: 'Today', text: 'Saved what you told me during setup.' },
+        { t: 'Sep 23', text: 'Kindle updated your current book.' },
+        { t: 'Sep 20', text: 'You kept "Preparing a talk on attention".' },
+        { t: 'Sep 14', text: 'You confirmed the evening pattern.' },
+      ],
+    };
+  }
+
+  allowed(m) { const s = this.state; return m.source === 'explicit' || (s.mech[m.source] && (!m.conn || s.conns[m.conn])); }
+  snap() { const s = this.state; return { mem: s.mem, pending: s.pending, conns: s.conns, mech: s.mech, sugg: s.sugg }; }
+  toast(msg, undoSnap) {
+    clearTimeout(this._t);
+    this.setState({ toast: { msg, undo: undoSnap } });
+    this._t = setTimeout(() => this.setState({ toast: null }), undoSnap ? 6000 : 2800);
+  }
+  addLog(text, t = 'Today') { this.setState(s => ({ log: [{ t, text }, ...s.log] })); }
+  destroy(msg, fn, logText) { const snap = this.snap(); this.setState(fn); this.addLog(logText || msg); this.toast(msg, snap); }
+  forget(id) {
+    const m = this.state.mem.find(x => x.id === id); if (!m) return;
+    this.destroy(`Forgot "${clip(m.text, 30)}"`, s => ({ mem: s.mem.filter(x => x.id !== id), sel: null, editStage: null }), `Deleted "${m.text}"`);
+  }
+  expOf(m) { return new Date(new Date(m.created).getTime() + this.expiry * DAY); }
+
+  keep(p, overrideText) {
+    const text = overrideText ?? p.text;
+    const m = { id: p.memId || 'm_' + p.id, layer: p.layer, text, source: p.source, conn: p.conn, detail: p.prompt,
+      steps: [...(p.steps || []), overrideText ? `You edited it to "${text}".` : null, `You tapped Keep on ${fmt(NOW.toISOString())}.`].filter(Boolean),
+      created: NOW.toISOString(), confirmed: NOW.toISOString(), confidence: p.conf, basis: p.basis };
+    this.setState(s => ({ mem: [...s.mem, m], pending: s.pending.filter(x => x.id !== p.id), pendEdit: null }));
+    this.addLog(`Kept "${text}"`);
+    this.toast(`Saved to ${LBY[p.layer].name}`);
+  }
+  reject(p) {
+    this.setState(s => ({ pending: s.pending.filter(x => x.id !== p.id) }));
+    this.addLog(`Rejected "${p.text}" — not stored.`);
+    this.toast('Not stored');
+  }
+
+  sendChat(txt) {
+    const text = (txt ?? this.state.chatIn).trim(); if (!text) return;
+    const s = this.state;
+    let prop = null;
+    const mm = text.match(/(\d+)\s*(min|minutes)/i);
+    if (mm) prop = { id: 'c_short', memId: 'l_short', layer: 'live', text: `Only ~${mm[1]} minutes today.` };
+    else if (/burn|tired|exhaust|break from/i.test(text)) prop = { id: 'c_break', memId: 'l_break', layer: 'live', text: 'A break from heavy nonfiction.' };
+    else if (/fiction|novel/i.test(text)) prop = { id: 'c_fic', layer: 'preference', text: 'More fiction lately.' };
+    else if (/learn|studying/i.test(text)) prop = { id: 'c_learn', layer: 'preference', text: `Learning: ${text}` };
+    const on = s.mech.conversational;
+    const reply = !on ? 'Got it. Conversation learning is off, so nothing is kept.' : prop ? (mm ? 'Got it — I shortened tonight\u2019s reading. There\u2019s a card on Today if you want me to remember this.' : 'Got it. There\u2019s a card on Today if you want me to remember this.') : 'Thanks. Nothing to remember there.';
+    const chat = [...s.chat, { who: 'you', text }, { who: 'umbra', text: reply }].slice(-4);
+    const pending = prop && on
+      ? [{ ...prop, id: prop.id + Date.now(), source: 'conversational', prompt: `You said: "${text}"`, steps: [`You wrote: "${text}"`, 'Umbra read it as something worth remembering.'] }, ...s.pending.filter(p => !prop.memId || p.memId !== prop.memId)]
+      : s.pending;
+    this.setState({ chat, chatIn: '', pending, pIdx: 0 });
+  }
+
+  suggestions() {
+    const s = this.state; const has = id => s.mem.some(m => m.id === id);
+    const short = has('l_short') || s.pending.some(p => p.memId === 'l_short');
+    return [
+      { id: 's_book', needs: ['l_book'], uses: ['l_book', 'pt_evening', 'p_rhythm', 'l_short'], when: has('pt_evening') ? 'Tonight, 9 pm' : 'This evening', title: 'The Extended Mind', author: 'Annie Murphy Paul', kind: 'Book', mins: short ? '15 min' : '25 min', sub: short ? 'Chapter 7, first part · 15 min' : 'Chapter 7 · 25 min', prog: '62%', cbg: '#33486A', cfg: '#F1E6D0' },
+      { id: 's_club', needs: ['i_club', 'l_club'], uses: ['i_club', 'l_club'], when: 'Before Wed', title: 'Piranesi', author: 'Susanna Clarke', kind: 'Book club', mins: '90 min', sub: 'Chapters 1–4 · over 3 evenings', cbg: '#7A3B2E', cfg: '#F3E3CF' },
+      has('l_break') ? null : { id: 's_talk', needs: ['l_talk'], uses: ['l_talk', 'pt_highlight'], when: 'Today', title: 'The Myth of Multitasking', author: 'Read-later', kind: 'Long read', mins: '18 min', sub: 'For your talk · 18 min', cbg: '#C9A45C', cfg: '#2B2620' },
+      { id: 's_flight', needs: ['l_flight'], uses: ['l_flight', 'pt_stall'], when: 'Saturday flight', title: 'Three short essays', author: 'Offline pack', kind: 'Essays', mins: '2.5 hr', sub: 'Saved offline · 2.5 hr', cbg: '#4B6A42', cfg: '#EFEAD8' },
+      { id: 's_pod', needs: ['pt_commute'], uses: ['pt_commute'], when: 'Tue commute', title: 'Why we forget', author: 'Hidden Brain', kind: 'Podcast', mins: '42 min', sub: 'Podcast · 42 min', cbg: '#5B4163', cfg: '#F0E4EC' },
+      { id: 's_new', needs: ['p_topics'], uses: ['p_topics', 'p_goals'], when: 'Anytime', title: `Intro to ${(s.topics[0] || 'something new').toLowerCase()}`, author: 'Primer', kind: 'Article', mins: '12 min', sub: 'Something new · 12 min', cbg: '#D8CBB3', cfg: '#2B2620' },
+    ].filter(x => x && x.needs.every(has) && s.sugg[x.id] !== 'hidden');
+  }
+
+  mv(m) {
+    const L = LBY[m.layer]; const c = m.conn ? CBY[m.conn] : null;
+    const exp = m.layer === 'live' ? this.expOf(m) : null;
+    const left = exp ? Math.max(0, Math.ceil((exp - NOW) / DAY)) : 0;
+    const told = m.source === 'explicit';
+    const pct = exp ? Math.round(left / this.expiry * 100) : 0;
+    return {
+      ...m, layerName: L.name, tag: L.tag, color: L.color, bg: L.bg, cardBd: L.cardBd, shapeR: L.shapeR, shapeBd: L.shapeBd, shapeBg: L.shapeBg,
+      srcCode: SRC[m.source].code, srcBg: SRC[m.source].color, srcName: SRC[m.source].name + (c ? ' · ' + c.name : ''),
+      told, certainty: told ? 'You said it' : m.layer === 'pattern' ? 'Inferred · you confirmed' : 'Observed · you confirmed',
+      isIdentity: m.layer === 'identity', isPref: m.layer === 'preference', isPattern: m.layer === 'pattern', isLive: m.layer === 'live',
+      hasConf: m.layer === 'pattern' && m.confidence != null,
+      onEdit: e => { e.stopPropagation(); this.setState({ sel: m.id, editStage: 'edit', editText: m.text }); },
+      shortMeta: m.layer === 'preference' ? `Confirmed ${fmt(m.confirmed)}` : m.layer === 'pattern' ? (m.basis || 'You told me') : `${c ? c.name : SRC[m.source].name} · ${fmt(m.created)}`,
+      confWord: m.confidence != null ? confWord(m.confidence) : '', dots: dots(m.confidence),
+      daysLeft: left, ringBg: `conic-gradient(#4B6A42 ${pct}%, #D5E0CB 0)`, expPct: pct + '%',
+      expLine: exp ? `${left}d left · ${fmt(exp.toISOString())}` : '',
+      confirmedFmt: m.confirmed ? fmt(m.confirmed) : '',
+      stale: m.layer === 'preference' && daysSince(m.confirmed) > this.staleDays,
+      onOpen: () => this.setState({ sel: m.id, editStage: null }),
+      onStill: () => { this.setState(s => ({ mem: s.mem.map(x => x.id === m.id ? { ...x, confirmed: NOW.toISOString(), steps: [...x.steps, `Re-confirmed on ${fmt(NOW.toISOString())}.`] } : x) })); this.addLog(`Re-confirmed "${m.text}"`); this.toast('Marked still true'); },
+      onNoLonger: () => this.forget(m.id),
+    };
+  }
+
+  download(name, text, type) {
+    const u = URL.createObjectURL(new Blob([text], { type }));
+    const a = document.createElement('a'); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(u), 1500);
+  }
+  exportObj() {
+    const s = this.state;
+    const item = m => ({ id: m.id, statement: m.text,
+      source: { mechanism: m.source, code: SRC[m.source].code, label: SRC[m.source].name, connection: m.conn || null, detail: m.detail },
+      derivation: m.steps, recorded_at: m.created, last_confirmed_at: m.confirmed || null,
+      confidence: m.confidence != null ? { score: m.confidence, label: confWord(m.confidence), basis: m.basis } : null,
+      expires_at: m.layer === 'live' ? this.expOf(m).toISOString() : null });
+    return { schema: 'umbra.memory/v1', exported_at: NOW.toISOString(), owner: s.name,
+      layers: Object.fromEntries(LAYERS.map(L => [L.id, s.mem.filter(m => m.layer === L.id).map(item)])),
+      permissions: Object.fromEntries(MECH_ORDER.map(k => [k, { enabled: !!s.mech[k], stores: k === 'explicit' ? 'directly' : 'after_confirmation' }])),
+      connections: CONNS.map(c => ({ id: c.id, name: c.name, mechanism: c.mech, enabled: !!s.conns[c.id] })), activity: s.log };
+  }
+  exportText() {
+    const s = this.state; const lines = [`What Umbra knows about ${s.name}`, `Exported ${NOW.toDateString()}`, ''];
+    LAYERS.forEach(L => {
+      const items = s.mem.filter(m => m.layer === L.id); lines.push(`${L.name.toUpperCase()} · ${L.tag} (${items.length})`, '');
+      items.forEach(m => { const v = this.mv(m); lines.push(`• ${m.text}`, `  Source: ${v.srcName} — ${m.detail}`); if (v.isPattern) lines.push(`  Confidence: ${v.confWord}, based on ${m.basis}`); if (v.isLive) lines.push(`  Expires: ${v.expLine}`); if (v.isPref) lines.push(`  Last confirmed ${fmt(m.confirmed)}`); });
+      lines.push('');
+    });
+    lines.push('Learning permissions:'); MECH_ORDER.forEach(k => lines.push(`  ${SRC[k].code}) ${SRC[k].name}: ${s.mech[k] ? 'on' : 'off'}`));
+    return lines.join('\n');
+  }
+  goTab(id) { this.setState({ tab: id }); if (this.scrollRef.current) this.scrollRef.current.scrollTop = 0; }
+
+  renderVals() {
+    const s = this.state; const mem = s.mem;
+    const count = f => mem.filter(f).length;
+    const chip = (arr, key, v) => { const on = arr.includes(v); return { label: v, on, bg: on ? '#2B2620' : '#FFFDF8', fg: on ? '#F6F1E7' : '#2B2620', bd: on ? '#2B2620' : '#E4DBCB', onClick: () => this.setState(st => ({ [key]: st[key].includes(v) ? st[key].filter(x => x !== v) : [...st[key], v] })) }; };
+    const seg = (on, label, fn) => ({ label, bg: on ? '#FFFDF8' : 'transparent', sh: on ? '0 2px 6px rgba(43,38,32,.12)' : 'none', onClick: fn });
+
+    const mechRows = MECH_ORDER.map(k => {
+      const n = count(m => m.source === k); const on = !!s.mech[k];
+      return { code: SRC[k].code, name: SRC[k].name, short: SRC[k].short, bg: on ? SRC[k].color : '#CFC5B4', n,
+        locked: k === 'explicit', toggleable: k !== 'explicit', tgBg: on ? '#4B6A42' : '#D9CFBD', tgX: on ? 18 : 0,
+        rule: k === 'explicit' ? 'Saves directly' : on ? 'Asks first' : 'Off', ruleColor: k === 'explicit' || on ? '#5E564B' : '#8A8174', hasMem: n > 0,
+        onToggle: () => { this.setState(st => ({ mech: { ...st.mech, [k]: !st.mech[k] } })); if (s.screen === 'app') { this.addLog(`${SRC[k].name} turned ${on ? 'off' : 'on'}.`); this.toast(`${SRC[k].name} ${on ? 'off' : 'on'}`); } },
+        onForget: () => this.destroy(`Forgot ${n} from ${SRC[k].name.toLowerCase()}`, st => ({ mem: st.mem.filter(m => m.source !== k) })) };
+    });
+
+    const plan = this.suggestions().map(sg => {
+      const used = sg.uses.map(id => mem.find(m => m.id === id)).filter(Boolean);
+      const pattern = used.some(m => m.layer === 'pattern'); const inferred = used.some(m => m.source !== 'explicit');
+      const done = s.sugg[sg.id] === 'done';
+      return { ...sg, done, active: !done, inferred, hasProg: !!sg.prog,
+        pill: pattern ? 'From a pattern' : inferred ? 'From a signal' : 'You told me',
+        pillBg: inferred ? 'transparent' : '#EAE2D3', pillFg: pattern ? '#3D5C7A' : '#5E564B', pillBd: pattern ? '1.5px solid #B9C8D6' : inferred ? '1.5px solid #D9CFBD' : 'none',
+        dotFill: inferred ? 'transparent' : sg.cfg,
+        basisText: pattern ? 'Suggested from a pattern, not something you told me.' : inferred ? 'Based on a signal you confirmed.' : 'Based on what you told me.',
+        basis: used.map(m => { const v = this.mv(m); return { text: m.text, color: v.shapeBg === 'transparent' ? v.color : v.shapeBg, bg: v.bg, onOpen: v.onOpen, onNotTrue: () => this.forget(m.id) }; }),
+        onFocus: () => this.setState({ focus: sg.id, openWhy: false }),
+        onWhy: () => this.setState(st => ({ openWhy: !st.openWhy })),
+        onSkip: () => { this.setState(st => ({ sugg: { ...st.sugg, [sg.id]: 'hidden' }, openWhy: false, focus: null })); this.addLog(`"Not now" on ${sg.title}.`); this.toast('Removed from today'); },
+        onStart: () => {
+          this.setState(st => ({ sugg: { ...st.sugg, [sg.id]: 'done' }, openWhy: false })); this.addLog(`Started ${sg.title}.`);
+          if (s.mech.behavioral && !s.morningAsked) {
+            this.setState(st => ({ morningAsked: true, pIdx: 0, pending: [{ id: 'q_morning', source: 'behavioral', prompt: 'You started reading at 9:41 am — usually it\u2019s evenings.', layer: 'pattern', text: 'Mornings might work too.', conf: 0.2, basis: '1 session', steps: [`You tapped Start on "${sg.title}" at 9:41 am.`] }, ...st.pending] }));
+            this.toast('Enjoy. I noticed something — see To review.');
+          } else this.toast('Enjoy your reading');
+        } };
+    });
+    const hero = plan.find(p => p.id === s.focus) || plan[0];
+    const heroV = hero ? { ...hero, open: s.openWhy && !hero.done, whyBg: s.openWhy ? '#2B2620' : 'transparent', whyFg: s.openWhy ? '#F6F1E7' : '#5E564B', whyBd: s.openWhy ? '#2B2620' : '#E4DBCB' } : {};
+    const more = plan.filter(p => p !== hero);
+
+    const pendingVis = s.pending.filter(p => this.allowed(p));
+    const pi = pendingVis.length ? s.pIdx % pendingVis.length : 0;
+    const p = pendingVis[pi];
+    let pc = {};
+    if (p) {
+      const L = LBY[p.layer]; const c = p.conn ? CBY[p.conn] : null; const editing = s.pendEdit === p.id;
+      pc = { ...p, glyph: c ? c.glyph : SRC[p.source].code, srcBg: c ? c.color : SRC[p.source].color, srcLine: c ? c.name : SRC[p.source].name,
+        layerName: `Remember as ${L.name.toLowerCase()}`, color: L.color, bg: L.bg, isPattern: p.layer === 'pattern', isLive: p.layer === 'live',
+        dots: dots(p.conf), expShort: `Expires in ${this.expiry}d`, editing, notEditing: !editing,
+        onKeep: () => this.keep(p), onReject: () => this.reject(p),
+        onEdit: () => this.setState({ pendEdit: p.id, pendText: p.text }),
+        onEditSave: () => this.keep(p, s.pendText.trim() || p.text), onEditCancel: () => this.setState({ pendEdit: null }) };
+    }
+
+    const q = s.q.trim().toLowerCase();
+    const layers = LAYERS.filter(L => s.filter === 'all' || s.filter === L.id).map(L => {
+      const all = mem.filter(m => m.layer === L.id);
+      const items = all.filter(m => !q || (m.text + ' ' + SRC[m.source].name + ' ' + (m.conn || '') + ' ' + m.detail).toLowerCase().includes(q)).map(m => this.mv(m));
+      const open = !!(s.openL[L.id] || q); const adding = s.addFor === L.id;
+      const n = all.length;
+      return { ...L, items, hasItems: n > 0, empty: items.length === 0 && !adding, emptyText: q && n ? 'No matches' : L.empty,
+        open, rot: open ? 180 : 0, headBg: open ? '#FFFDF8' : 'rgba(255,253,248,.55)',
+        countLabel: `${n} ${n === 1 ? 'item' : 'items'} · ${L.tag.toLowerCase()}`,
+        adding, notAdding: !adding,
+        addPh: { identity: 'e.g. I have a daughter, Ana', preference: 'e.g. Prefer audiobooks for history', pattern: 'e.g. I read more on weekends', live: 'e.g. Studying for an exam this week' }[L.id],
+        addNote: { identity: 'Stable fact. Future edits need confirmation.', preference: `I'll check in after ${this.staleDays} days.`, pattern: 'Saved as something you told me, not an inference.', live: `Auto-deletes in ${this.expiry} days.` }[L.id],
+        onToggleOpen: () => this.setState(st => ({ openL: { ...st.openL, [L.id]: !st.openL[L.id] }, addFor: st.addFor === L.id ? null : st.addFor })),
+        onAdd: () => this.setState({ addFor: L.id, addText: '' }),
+        onAddSave: () => {
+          const t = s.addText.trim(); if (!t) return;
+          const m = { id: 'u' + Date.now(), layer: L.id, text: t, source: 'explicit', detail: `Added in Memory, ${fmt(NOW.toISOString())}`, steps: [`You added this in Memory: "${t}"`, 'Saved directly — you said it.'], created: NOW.toISOString(), confirmed: NOW.toISOString() };
+          this.setState(st => ({ mem: [...st.mem, m], addFor: null, addText: '' }));
+          this.addLog(`Added to ${L.name}: "${t}"`); this.toast(`Added to ${L.name}`);
+        },
+        onClear: () => this.destroy(`Forgot all ${L.name.toLowerCase()}`, st => ({ mem: st.mem.filter(m => m.layer !== L.id) })) };
+    });
+    const layerTiles = LAYERS.map(L => ({ ...L, count: count(m => m.layer === L.id), ring: s.filter === L.id ? L.color : 'transparent',
+      onClick: () => this.setState(st => ({ filter: st.filter === L.id ? 'all' : L.id, openL: st.filter === L.id ? st.openL : { ...st.openL, [L.id]: true } })) }));
+    const told = count(m => m.source === 'explicit');
+    const memSummary = mem.length ? `${told} told by you · ${mem.length - told} inferred, then confirmed` : 'Nothing stored.';
+
+    const connRows = CONNS.map(c => {
+      const on = !!s.conns[c.id]; const mechOn = !!s.mech[c.mech]; const n = count(m => m.conn === c.id); const live = on && mechOn;
+      return { ...c, tileBg: live ? c.color : '#EEE7D9', tileFg: live ? '#FFFDF8' : '#8A8174', tgBg: on ? '#4B6A42' : '#D9CFBD', tgX: on ? 16 : 0, opacity: mechOn ? 1 : 0.55, hasMem: n > 0,
+        statusLine: !mechOn ? 'Paused in Privacy' : n ? `${n} ${n === 1 ? 'memory' : 'memories'}` : on ? 'Connected' : 'Off',
+        onToggle: () => { this.setState(st => ({ conns: { ...st.conns, [c.id]: !on } })); this.addLog(`${c.name} ${on ? 'paused' : 'connected'}.`); this.toast(`${c.name} ${on ? 'paused' : 'connected'}`); },
+        onRemove: () => this.destroy(`Removed ${c.name}, forgot ${n}`, st => ({ conns: { ...st.conns, [c.id]: false }, mem: st.mem.filter(m => m.conn !== c.id), pending: st.pending.filter(x => x.conn !== c.id) })) };
+    });
+    const liveConns = CONNS.filter(c => s.conns[c.id] && s.mech[c.mech]).length;
+
+    const srcBar = mem.length ? MECH_ORDER.map(k => ({ w: (count(m => m.source === k) / mem.length * 100) + '%', bg: SRC[k].color })) : [];
+
+    const selM = mem.find(m => m.id === s.sel);
+    let sel = {};
+    if (selM) {
+      const v = this.mv(selM);
+      const facts = [{ k: 'Recorded', v: fmt(selM.created) }, { k: 'Source', v: `${SRC[selM.source].code} · ${SRC[selM.source].name}` }];
+      if (v.isPattern) facts.push({ k: 'Confidence', v: `${v.confWord} · ${Math.round(selM.confidence * 100)}%` });
+      if (v.isLive) facts.push({ k: 'Auto-deletes', v: fmt(this.expOf(selM).toISOString()) });
+      const uses = plan.filter(x => x.uses.includes(selM.id)).map(x => x.title);
+      sel = { ...v, steps: selM.steps.map((t, i) => ({ text: t, dot: i === selM.steps.length - 1 ? '#2B2620' : '#CFC5B4', line: i === selM.steps.length - 1 ? 'transparent' : '#E4DBCB' })),
+        facts, hasUses: uses.length > 0, usesText: uses.join(', '),
+        editing: s.editStage === 'edit', reviewing: s.editStage === 'review', notEditing: !s.editStage,
+        editPrimaryLabel: v.isIdentity ? 'Review change' : 'Save' };
+    }
+    const saveEdit = () => {
+      const t = s.editText.trim(); if (!t || !selM) return;
+      this.setState(st => ({ editStage: null, mem: st.mem.map(x => x.id === selM.id ? { ...x, text: t, confirmed: x.confirmed ? NOW.toISOString() : x.confirmed, steps: [...x.steps, `You edited this (was "${x.text}").`] } : x) }));
+      this.addLog(`Edited "${selM.text}" → "${t}"`); this.toast('Updated');
+    };
+
+    const tab = id => ({ bg: s.tab === id ? '#2B2620' : 'transparent', fg: s.tab === id ? '#F6F1E7' : '#8A8174', onClick: () => this.goTab(id), hasBadge: id === 'today' && pendingVis.length > 0 && s.tab !== 'today' });
+    const obLabels = ['Get started', 'Continue', 'Continue', 'Continue', 'Start reading'];
+
+    return {
+      isOnboarding: s.screen === 'onboarding', isApp: s.screen === 'app',
+      ob0: s.ob === 0, ob1: s.ob === 1, ob2: s.ob === 2, ob3: s.ob === 3, ob4: s.ob === 4, obCanBack: s.ob > 0,
+      obBars: [0, 1, 2, 3, 4].map(i => ({ bg: i <= s.ob ? '#2B2620' : '#E4DBCB' })),
+      obNextLabel: obLabels[s.ob],
+      obNext: () => s.ob < 4 ? this.setState({ ob: s.ob + 1 }) : this.setState({ ...this.seed(s), tab: 'today' }),
+      obBack: () => this.setState({ ob: Math.max(0, s.ob - 1) }),
+      name: s.name, role: s.role, onName: e => this.setState({ name: e.target.value }), onRole: e => this.setState({ role: e.target.value }),
+      goalChips: GOALS.map(g => chip(s.goals, 'goals', g)),
+      topicTiles: TOPICS.map(([t, bg, fg]) => { const c = chip(s.topics, 'topics', t); return { ...c, bg, fg, opacity: c.on ? 1 : 0.42 }; }),
+      timeTiles: TIMES.map(([t, sun]) => { const c = chip(s.times, 'times', t); return { ...c, sun, bg: c.on ? '#2B2620' : '#FFFDF8', fg: c.on ? '#F6F1E7' : '#5E564B' }; }),
+      formatChips: FORMATS.map(g => chip(s.formats, 'formats', g)),
+      lenOpts: ['10', '20', '45'].map(l => seg(s.len === l, l, () => this.setState({ len: l }))),
+      mechRows, scrollRef: this.scrollRef,
+      tabToday: s.tab === 'today', tabMemory: s.tab === 'memory', tabSources: s.tab === 'sources', tabPrivacy: s.tab === 'privacy',
+      tToday: tab('today'), tMemory: tab('memory'), tSources: tab('sources'), tPrivacy: tab('privacy'),
+      goMemory: () => this.goTab('memory'),
+      firstName: (s.name || 'there').split(' ')[0], initial: (s.name || 'U')[0].toUpperCase(),
+      hasHero: !!hero, hero: heroV, planEmpty: !hero, more, hasMore: more.length > 0,
+      hasPending: !!p, pc, pendPos: pendingVis.length > 1 ? `${pi + 1} of ${pendingVis.length}` : '', pendMany: pendingVis.length > 1,
+      pendNext: () => this.setState(st => ({ pIdx: st.pIdx + 1, pendEdit: null })),
+      pendText: s.pendText, onPendText: e => this.setState({ pendText: e.target.value }),
+      addText: s.addText, onAddText: e => this.setState({ addText: e.target.value }), cancelAdd: () => this.setState({ addFor: null }),
+      addOpacity: s.addText.trim() ? 1 : 0.35,
+      memSummary, q: s.q, onQ: e => this.setState({ q: e.target.value }), layerTiles, layers,
+      connRows, connSummary: `${liveConns} of ${CONNS.length} active`,
+      memCount: mem.length, srcBar,
+      layerForget: LAYERS.map(L => { const n = count(m => m.layer === L.id); return { ...L, n, opacity: n ? 1 : 0.45, onClear: () => n && this.destroy(`Forgot all ${L.name.toLowerCase()}`, st => ({ mem: st.mem.filter(m => m.layer !== L.id) })) }; }),
+      exportJson: () => { this.download('umbra-memory.json', JSON.stringify(this.exportObj(), null, 2), 'application/json'); this.addLog('Exported JSON.'); this.toast('Downloaded umbra-memory.json'); },
+      exportText: () => { this.download('umbra-memory-summary.txt', this.exportText(), 'text/plain'); this.addLog('Exported summary.'); this.toast('Downloaded summary'); },
+      logRows: s.log.slice(0, 3).map((l, i) => ({ ...l, bd: i ? '1px solid #EEE7D9' : 'none' })),
+      forgetAll: () => this.destroy('Everything forgotten', () => ({ mem: [], pending: [] }), 'Deleted everything.'),
+      hasSel: !!selM, sel, closeSel: () => this.setState({ sel: null, editStage: null }),
+      editText: s.editText, onEditText: e => this.setState({ editText: e.target.value }),
+      startEdit: () => this.setState({ editStage: 'edit', editText: selM ? selM.text : '' }),
+      editPrimary: () => sel.isIdentity ? (s.editText.trim() && this.setState({ editStage: 'review' })) : saveEdit(),
+      confirmIdentity: saveEdit, editCancel: () => this.setState({ editStage: null }),
+      forgetSel: () => selM && this.forget(selM.id),
+      reconfirmSel: () => selM && this.mv(selM).onStill(),
+      tellOpen: s.tell, openTell: () => this.setState({ tell: true }), closeTell: () => this.setState({ tell: false }),
+      tellModes: [['remember', 'Remember this'], ['talk', 'Just talk']].map(([id, l]) => seg(s.tellMode === id, l, () => this.setState({ tellMode: id }))),
+      modeRemember: s.tellMode === 'remember', modeTalk: s.tellMode === 'talk',
+      tellText: s.tellText, onTellText: e => this.setState({ tellText: e.target.value }),
+      tellSeeds: ['Learning Portuguese', 'One book at a time', 'On holiday next week'].map(l => ({ label: l, onClick: () => this.setState({ tellText: l, tellLayer: /holiday|week/i.test(l) ? 'live' : 'preference' }) })),
+      tellLayers: ['identity', 'preference', 'live'].map(id => { const L = LBY[id]; const on = s.tellLayer === id; return { label: L.name, color: L.color, bg: on ? L.bg : '#FFFDF8', ring: on ? L.color : 'transparent', shapeR: L.shapeR, shapeBd: L.shapeBd, shapeBg: L.shapeBg, onClick: () => this.setState({ tellLayer: id }) }; }),
+      tellNote: { identity: 'Stable — edits need confirmation', preference: `I'll check in after ${this.staleDays} days`, live: `Auto-deletes in ${this.expiry} days` }[s.tellLayer],
+      tellOpacity: s.tellText.trim() ? 1 : 0.35,
+      saveTell: () => {
+        const t = s.tellText.trim(); if (!t) return;
+        const m = { id: 't' + Date.now(), layer: s.tellLayer, text: t, source: 'explicit', detail: `Tell me, ${fmt(NOW.toISOString())}`, steps: [`You wrote: "${t}"`, 'Saved directly — you said it.'], created: NOW.toISOString(), confirmed: NOW.toISOString() };
+        this.setState(st => ({ mem: [...st.mem, m], tell: false, tellText: '' }));
+        this.addLog(`You told me "${t}"`); this.toast(`Saved to ${LBY[s.tellLayer].name}`);
+      },
+      chat: s.chat.map(m => m.who === 'you' ? { ...m, justify: 'flex-end', bg: '#2B2620', fg: '#F6F1E7' } : { ...m, justify: 'flex-start', bg: '#FFFDF8', fg: '#2B2620' }),
+      chatEmpty: s.chat.length === 0,
+      chatSeeds: ['Only 15 minutes today', 'Burned out on nonfiction'].map(l => ({ label: l, onClick: () => this.sendChat(l) })),
+      chatIn: s.chatIn, onChatIn: e => this.setState({ chatIn: e.target.value }),
+      onChatKey: e => { if (e.key === 'Enter') this.sendChat(); }, onChatSend: () => this.sendChat(),
+      hasToast: !!s.toast, toastMsg: s.toast ? s.toast.msg : '', toastUndo: !!(s.toast && s.toast.undo),
+      undo: () => { const u = s.toast && s.toast.undo; if (!u) return; this.setState({ ...u, toast: null }); this.addLog('Undid deletion.'); },
+    };
+  }
+}
+</script>
+</body>
+</html>
