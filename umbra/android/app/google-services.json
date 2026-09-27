@@ -12,7 +12,12 @@
           "package_name": "com.example.umbra"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "643714938667-62m4t2q6huo7eupscqclqpgllqisldur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDqAStmpKQyptmURGlwcQ6a-yGsQ2mrWh4"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643714938667-62m4t2q6huo7eupscqclqpgllqisldur.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "643714938667-p2d32a866djcj6vi8i1sltchl367qnq3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.umbra"
+              }
+            }
+          ]
         }
       }
     }

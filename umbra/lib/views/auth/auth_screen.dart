@@ -185,19 +185,25 @@ class _Field extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60,
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: AppColors.card,
         borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: AppColors.line),
       ),
       child: TextField(
         controller: controller,
         obscureText: obscure,
         keyboardType: keyboard,
         autocorrect: false,
+        cursorColor: AppColors.ink,
         style: AppTypography.sansStyle(size: 17),
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: AppTypography.sansStyle(size: 16, color: AppColors.faint),
+          filled: false,
+          isDense: true,
+          border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 18,

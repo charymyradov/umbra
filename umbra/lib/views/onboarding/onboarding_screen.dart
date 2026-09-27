@@ -317,17 +317,23 @@ class _LargeFieldState extends State<_LargeField> {
   Widget build(BuildContext context) {
     return Container(
       height: 60,
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: AppColors.card,
         borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: AppColors.line),
       ),
       child: TextField(
         controller: _controller,
         onChanged: widget.onChanged,
+        cursorColor: AppColors.ink,
         style: AppTypography.sansStyle(size: 18),
         decoration: InputDecoration(
           hintText: widget.hint,
           hintStyle: AppTypography.sansStyle(size: 18, color: AppColors.faint),
+          filled: false,
+          isDense: true,
+          border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 19,
@@ -566,17 +572,54 @@ class _StepRhythm extends ConsumerWidget {
             color: AppColors.lineSoft,
             borderRadius: BorderRadius.circular(16),
           ),
-          child: Row(
-            children: [
-              for (final len in kSessionLengths)
-                Expanded(
-                  child: _LengthButton(
-                    label: len,
-                    selected: state.sessionLength == len,
-                    onTap: () => vm.setSessionLength(len),
-                  ),
-                ),
-            ],
+          child: SizedBox(
+            height: 48,
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final count = kSessionLengths.length;
+                final segW = constraints.maxWidth / count;
+                final found = kSessionLengths.indexOf(state.sessionLength);
+                final index = found < 0 ? 0 : found;
+                return Stack(
+                  children: [
+                    AnimatedPositioned(
+                      duration: const Duration(milliseconds: 420),
+                      curve: Curves.easeOutCubic,
+                      left: index * segW + 2,
+                      top: 0,
+                      width: segW - 4,
+                      height: 48,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: AppColors.card,
+                          borderRadius: BorderRadius.circular(12),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0x1F2B2620),
+                              blurRadius: 6,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned.fill(
+                      child: Row(
+                        children: [
+                          for (final len in kSessionLengths)
+                            Expanded(
+                              child: _LengthButton(
+                                label: len,
+                                onTap: () => vm.setSessionLength(len),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ),
         const SizedBox(height: 26),
@@ -663,53 +706,36 @@ class _TimeTile extends StatelessWidget {
 class _LengthButton extends StatelessWidget {
   const _LengthButton({
     required this.label,
-    required this.selected,
     required this.onTap,
   });
 
   final String label;
-  final bool selected;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 180),
+      child: Container(
         height: 48,
         margin: const EdgeInsets.symmetric(horizontal: 2),
-        decoration: BoxDecoration(
-          color: selected ? AppColors.card : Colors.transparent,
-          borderRadius: BorderRadius.circular(12),
-          boxShadow: selected
-              ? const [
-                  BoxShadow(
-                    color: Color(0x1F2B2620),
-                    blurRadius: 6,
-                    offset: Offset(0, 2),
-                  ),
-                ]
-              : null,
-        ),
-        child: Transform.translate(
-          offset: const Offset(0, 2),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
-            children: [
-              Text(label, style: AppTypography.serifStyle(size: 22)),
-              const SizedBox(width: 3),
-              Text(
-                'min',
-                style: AppTypography.sansStyle(
-                  size: 12,
-                  color: AppColors.faint,
-                ),
+        alignment: Alignment.center,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+          children: [
+            Text(label, style: AppTypography.serifStyle(size: 22)),
+            const SizedBox(width: 3),
+            Text(
+              'min',
+              style: AppTypography.sansStyle(
+                size: 12,
+                color: AppColors.faint,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
